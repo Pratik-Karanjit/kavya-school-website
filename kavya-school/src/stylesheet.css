@@ -1,0 +1,373 @@
+@font-face {
+  font-family: Madani-Arabic;
+  src: url("../font/MadaniArabicMedium.ttf") format("truetype");
+}
+
+/* @font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy Regular"), local("Gilroy-Regular"),
+    url("Gilroy-Regular.woff2") format("woff2"),
+    url("Gilroy-Regular.woff") format("woff"),
+    url("Gilroy-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+} */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Madani Arabic", sans-serif;
+}
+
+.html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Madani Arabic", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.main-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.main-wrapper .kavya-img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 100% 90%, 50% 100%, 0 90%);
+}
+
+.header-section {
+  display: flex;
+  width: 100%;
+  height: 90px;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  transition: all 0.5s;
+}
+
+.course-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #ffffff;
+  font-size: 0;
+  line-height: 0;
+  margin: 4px;
+  float: left;
+  cursor: pointer;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.header-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 17rem;
+  gap: 70px;
+}
+
+.navColor {
+  background-color: rgb(51, 50, 50);
+  display: flex;
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  transition: all 0.5s;
+}
+
+/* .navTransparent {
+  background: transparent !important;
+} */
+
+.header-item li {
+  line-height: 1;
+  list-style: none;
+  letter-spacing: 1.6px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.header-item li a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-item li i {
+  margin-left: 5px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.header-item img {
+  height: 4.2rem;
+  margin-top: -22px;
+}
+
+.apply-btn {
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 255);
+  height: 2.5rem;
+  width: 9rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: 0.3s;
+  margin-top: -5px;
+  position: absolute;
+  right: 0;
+}
+
+.apply-btn:hover {
+  background-color: #f1e4e4;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 14rem;
+  left: 44rem;
+  color: white;
+  font-size: 50px;
+  font-weight: 750;
+}
+
+.second-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 99vw;
+  height: 87vh;
+}
+
+.left-wrapper {
+  padding-bottom: 11rem;
+  width: 50vw;
+  background-color: #ffffff;
+  padding-left: 15rem;
+}
+
+.left-para {
+  font-family: "Gilroy-Regular";
+  src: url("../Gilroy-Regular/Gilroy-Regular.woff") format("woff");
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+
+.right-wrapper {
+  width: 50vw;
+}
+
+.right-wrapper input {
+  height: 3.5rem;
+  width: 16rem;
+  background-color: #e6e6e6;
+  border: none;
+  margin: 1rem 0rem;
+  padding: 0px 8px;
+}
+
+.name-input {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.right-wrapper button {
+  background-color: #faaf42;
+  height: 3rem;
+  width: 15rem;
+  margin: 1rem 0;
+  border: none;
+  cursor: pointer;
+}
+
+.mail-phone-input {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.mail-phone-input p {
+  font-size: 12px;
+}
+
+.mail-phone-input .phone-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.mail-phone-input .phone-input .form-checkbox {
+  width: 20px;
+  height: 15px;
+}
+
+.mail-phone-input .phone-input p {
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+.checkbox-p {
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -15px;
+}
+
+.course-btn-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-btn-input .course-input {
+  width: 34.5rem;
+}
+
+.why-kavya {
+  width: 99vw;
+  height: 100vh;
+  background-color: #12202e;
+  color: rgb(255, 255, 255);
+}
+
+.why-kavya img {
+  height: 87vh;
+  width: 99vw;
+  position: fixed;
+}
+
+.why-kavya-heading {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-kavya-heading p {
+  letter-spacing: 1px;
+}
+
+.smart-study-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+}
+
+.card1,
+.card2,
+.card3 {
+  padding: 30px 0px;
+  width: 26rem;
+  /* background-color: rgb(168, 103, 103); */
+  background-color: transparent;
+  margin: 2rem;
+}
+
+.cards-para {
+  letter-spacing: 1px;
+}
+
+.bachelor-cap,
+.group-head,
+.paper-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.card1-heading {
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.card2-heading {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.card3-heading {
+  margin-top: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.bachelor-cap,
+.group-head,
+.paper-area p {
+  padding: 15px 20px;
+  line-height: 30px;
+}
+
+.card1 .card1-img {
+  margin: 20px 0px;
+  height: 120px;
+  width: 120px;
+  position: relative;
+}
+
+.card2 .card2-img {
+  margin: 18px 0px;
+  height: 110px;
+  position: relative;
+
+  width: 120px;
+}
+
+.card3 .card3-img {
+  margin: 20px 0px;
+  height: 120px;
+
+  position: relative;
+  width: 120px;
+}
+
+.card-1-content,
+.card-2-content,
+.card-3-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.explore-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.explore-section h1 {
+  padding-top: 60px;
+}
+
+.explore-section p {
+  padding-top: 15px;
+  color: #faaf42;
+  cursor: pointer;
+}
