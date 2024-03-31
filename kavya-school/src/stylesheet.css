@@ -83,7 +83,7 @@ body {
 }
 
 .navColor {
-  background-color: rgb(51, 50, 50);
+  background-color: rgb(65, 57, 57);
   display: flex;
   width: 100%;
   height: 90px;
@@ -91,6 +91,14 @@ body {
   top: 0;
   transition: all 0.5s;
 }
+
+/* .navItem {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 17rem;
+  gap: 70px;
+} */
 
 /* .navTransparent {
   background: transparent !important;
@@ -249,11 +257,11 @@ body {
   color: rgb(255, 255, 255);
 }
 
-.why-kavya img {
+/* .why-kavya img {
   height: 87vh;
   width: 99vw;
   position: fixed;
-}
+} */
 
 .why-kavya-heading {
   height: 30%;
@@ -370,4 +378,196 @@ body {
   padding-top: 15px;
   color: #faaf42;
   cursor: pointer;
+}
+
+.slideshow-section {
+  height: 88vh;
+  width: 99vw;
+  /* background-image: url(./photos/kavya-roof.png); */
+  background-size: cover;
+}
+.slideshow {
+  width: 99vw;
+}
+
+.image-gallery-image {
+  height: 45rem;
+}
+
+.top-courses-section {
+  height: 80vh;
+  width: 99vw;
+  margin-top: 5rem;
+}
+
+.top-courses-heading {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-courses-heading h1 {
+  font-weight: 900;
+}
+
+.top-courses-section p {
+  letter-spacing: 1px;
+}
+
+.view-all-section {
+  display: flex;
+  gap: 1rem;
+}
+
+.view-all-btn {
+  color: #faaf42;
+  cursor: pointer;
+}
+
+.top-courses-container {
+  display: flex;
+  gap: 7rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-courses-container1 {
+  background-color: #d9d9d9;
+  width: 28rem;
+  padding: 10rem 0;
+}
+
+.discover-program-section {
+  height: 100vh;
+  width: 99vw;
+}
+
+.discover-program-heading {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.discover-program-heading h1 {
+  font-weight: 900;
+}
+
+.discover-program-section p {
+  letter-spacing: 0.5px;
+}
+
+.program-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+}
+
+.program-card1,
+.program-card2,
+.program-card3 {
+  padding: 120px 0px;
+  width: 26rem;
+  background: linear-gradient(#1d2f44, #000000);
+  margin: 2rem;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 100% 80%, 50% 100%, 0 80%);
+}
+
+.hexagon-container {
+  width: 100px;
+  height: 57.735px;
+  background: rgb(255, 255, 255);
+  position: relative;
+  margin: 1rem 1rem;
+}
+.hexagon-container::before {
+  content: "";
+  position: absolute;
+  top: -14.43375px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 14.43375px solid rgb(255, 255, 255);
+}
+.hexagon-container::after {
+  content: "";
+  position: absolute;
+  bottom: -14.43375px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 14.43375px solid rgb(255, 255, 255);
+}
+
+.program-top1,
+.program-top2,
+.program-top3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.program-para {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+}
+
+.program-heading {
+  color: #faaf42;
+}
+
+.program-lines {
+  color: white;
+}
+
+.image-gallery-thumbnails-wrapper {
+  position: absolute;
+  bottom: 200px;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-gallery-bullets {
+  display: none;
+}
+
+.image-gallery-icon {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  border-radius: 20px;
+}
+
+.image-gallery-thumbnail .image-gallery-thumbnail-image {
+  height: 100px;
+  object-fit: cover;
+  object-position: top;
+  cursor: pointer;
+}
+
+.image-gallery-thumbnail {
+  width: 200px !important;
+}
+
+.image-gallery-thumbnail-label {
+  top: 82% !important;
+}
+
+.image-gallery-image {
+  object-fit: cover;
+  object-position: top;
 }
