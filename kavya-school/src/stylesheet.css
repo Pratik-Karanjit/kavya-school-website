@@ -469,13 +469,14 @@ body {
   align-items: center;
   height: 50%;
   width: 100%;
+  margin-top: 2rem;
 }
 
 .program-card1,
 .program-card2,
 .program-card3 {
   padding: 120px 0px;
-  width: 26rem;
+  width: 24rem;
   background: linear-gradient(#1d2f44, #000000);
   margin: 2rem;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 100% 80%, 50% 100%, 0 80%);
@@ -483,32 +484,35 @@ body {
 
 .hexagon-container {
   width: 100px;
-  height: 57.735px;
+  height: 75.735px;
   background: rgb(255, 255, 255);
   position: relative;
   margin: 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .hexagon-container::before {
   content: "";
   position: absolute;
-  top: -14.43375px;
+  top: -20px;
   left: 0;
   width: 0;
   height: 0;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
-  border-bottom: 14.43375px solid rgb(255, 255, 255);
+  border-bottom: 20px solid rgb(255, 255, 255);
 }
 .hexagon-container::after {
   content: "";
   position: absolute;
-  bottom: -14.43375px;
+  bottom: -20px;
   left: 0;
   width: 0;
   height: 0;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
-  border-top: 14.43375px solid rgb(255, 255, 255);
+  border-top: 20px solid rgb(255, 255, 255);
 }
 
 .program-top1,
@@ -519,17 +523,23 @@ body {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  margin-top: -3rem;
 }
 
 .program-para {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  line-height: 25px;
 }
 
 .program-heading {
   color: #faaf42;
+  font-weight: 500;
 }
 
 .program-lines {
@@ -570,4 +580,158 @@ body {
 .image-gallery-image {
   object-fit: cover;
   object-position: top;
+}
+
+.black-bachelor-cap {
+  height: 80px;
+}
+.black-book {
+  height: 45px;
+}
+
+.slanted {
+  height: 80vh;
+  width: 99vw;
+}
+
+.slanted-photo {
+  width: 100%;
+  height: 90%;
+  display: block;
+  position: relative;
+  bottom: -65px;
+  object-fit: cover;
+  object-position: center;
+  transform: skewY(-6deg);
+}
+
+.gallery-section {
+  height: 100vh;
+  width: 99vw;
+}
+
+.gallery-heading {
+  height: 30%;
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-slideshow {
+  width: 100%;
+  padding: 50px 50px;
+  background-color: black;
+}
+
+/* .slideshow-container {
+  width: 80%;
+  padding: 100px 100px;
+  background-color: white;
+} */
+
+.slideshow-container1,
+.slideshow-container2,
+.slideshow-container3,
+.slideshow-container4 {
+  padding: 100px 50px;
+  width: 5rem;
+  background-color: #e6e6e6;
+}
+
+.slider-container {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.seperator {
+  width: 100%;
+}
+
+.carousel-wrapper {
+  width: 100%;
+}
+
+.rec-carousel-item:focus {
+  outline: none;
+  box-shadow: inset 0 0 1px 0px violet;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  width: 70%;
+  background-color: #00008b;
+  color: #fff;
+  margin: 0 15px;
+  font-size: 4em;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hexagon-image {
+  height: 26rem;
+  width: 40rem;
+}
+
+.bottom-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 99vw;
+
+  background: linear-gradient(#152535, #060b11);
+  padding: 150px 0;
+}
+
+.left-half-form-section {
+  width: 50vw;
+  padding: 0rem 10rem;
+}
+
+.bottom-form input {
+  height: 3.5rem;
+  width: 16rem;
+  background-color: #e6e6e6;
+  border: none;
+  margin: 1rem 0rem;
+  padding: 0px 8px;
+}
+
+.bottom-form button {
+  background-color: #faaf42;
+  height: 3rem;
+  width: 15rem;
+  margin: 1rem 0;
+  border: none;
+  cursor: pointer;
+}
+
+.right-half-form-section {
+  width: 50vw;
+}
+
+.blog-carousel {
+  height: 50vh;
+  background-color: #060b11;
+}
+
+.blog-item {
+  display: flex;
+  flex-direction: row;
+  /* gap: 10rem; */
+}
+
+.blog-right-section {
+  height: 30vh;
+  width: 40vh;
+  background-color: rgb(122, 97, 97);
 }

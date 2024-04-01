@@ -3,10 +3,13 @@ import "../src/stylesheet.css";
 import bachelorCap from "./graduation-cap-512.png";
 import groupHead from "./group-512.png";
 import paperImg from "./paper-512.png";
-import whyKavyaBg from "./whyKavya.png";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import kavyaRoof from "./photos/kavya-roof.png";
+import blackBachelor from "../src/photos/black-bachelor-cap.jpg";
+import blackBook from "../src/photos/black-book.png";
+import Carousel from "react-elastic-carousel";
+import ReactSlider from "./ReactSlider";
+import BlogSlider from "./photos/BlogSlider";
 
 const HomePage = () => {
   const [changeNavColor, setChangeNavColor] = useState(false);
@@ -26,32 +29,35 @@ const HomePage = () => {
         "https://s3-alpha-sig.figma.com/img/5b0e/bea1/be838bd314970a20f1a3bf7973fabe27?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZu~v2uOFjSB6d4j7r1xaGk7q3a95wJBmlaEUXqSr~E0GPaoO~RUbkF8Q-mOG1wVO9R6hv60oCuUU-RSbyD9KdS~mfnFhF1ERRAngFSNpE8OtxdiEpQcWIRc8SLmfVUYRQPe5WjCiVddgQ7L9mi~JfEdmpScvIAaNnzgRvT75zts8sEHWrKlUtJNmk2gao2TSsohjCP8d3KgOZqOx7NteOfZG75Gy5Efo39DYrJ1PxyFt50Nq43RrpTAPW5q1QVRftU-VHvc34nS8nghCNtWD2~iEoN--SaYkzchco4073mXGySmahLpnZQlUDl7UznORxYEpQV~INh4MIKk3eHsKg__",
       thumbnail:
         "https://s3-alpha-sig.figma.com/img/5b0e/bea1/be838bd314970a20f1a3bf7973fabe27?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZu~v2uOFjSB6d4j7r1xaGk7q3a95wJBmlaEUXqSr~E0GPaoO~RUbkF8Q-mOG1wVO9R6hv60oCuUU-RSbyD9KdS~mfnFhF1ERRAngFSNpE8OtxdiEpQcWIRc8SLmfVUYRQPe5WjCiVddgQ7L9mi~JfEdmpScvIAaNnzgRvT75zts8sEHWrKlUtJNmk2gao2TSsohjCP8d3KgOZqOx7NteOfZG75Gy5Efo39DYrJ1PxyFt50Nq43RrpTAPW5q1QVRftU-VHvc34nS8nghCNtWD2~iEoN--SaYkzchco4073mXGySmahLpnZQlUDl7UznORxYEpQV~INh4MIKk3eHsKg__",
-      thumbnailLabel: "Hello",
+      thumbnailLabel: "Kavya Roof",
     },
     {
       original:
         "https://s3-alpha-sig.figma.com/img/9954/34b1/79b5f42acde348c01e9027b7bce153f7?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IeZKXgcAJkutLKdjQS8iwfOLQGEXTr3dysFPL8O~Ss3860omGNhtxaw2fbjv16lDcZI8xHSWLaA~WllMIDaOy6bgFCrLVwP2I2-~zX-gdyN8r80hl-xdXn-TrvpRt8XKc7BF5Yclu4DUOZvatLI-FxZRfo29sWeVeXeupn8BBK~LRw6qgbq-SpmgyS2BrPRJIpKmyhNzWzPIZY17cS12K-XdzzTdOmI2g0nkbNLs40Aib43EhOxX4~23G34FhcCFKibdjcuqSku4L9KOPBY-xZ7uK7brcWYxaRXlfVz1YkTcrA~IIAIu5kqgRZhYUYJu2gy-1tXh-SvmHXLm-eeliw__",
       thumbnail:
         "https://s3-alpha-sig.figma.com/img/9954/34b1/79b5f42acde348c01e9027b7bce153f7?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IeZKXgcAJkutLKdjQS8iwfOLQGEXTr3dysFPL8O~Ss3860omGNhtxaw2fbjv16lDcZI8xHSWLaA~WllMIDaOy6bgFCrLVwP2I2-~zX-gdyN8r80hl-xdXn-TrvpRt8XKc7BF5Yclu4DUOZvatLI-FxZRfo29sWeVeXeupn8BBK~LRw6qgbq-SpmgyS2BrPRJIpKmyhNzWzPIZY17cS12K-XdzzTdOmI2g0nkbNLs40Aib43EhOxX4~23G34FhcCFKibdjcuqSku4L9KOPBY-xZ7uK7brcWYxaRXlfVz1YkTcrA~IIAIu5kqgRZhYUYJu2gy-1tXh-SvmHXLm-eeliw__",
-      thumbnailLabel: "World",
+      thumbnailLabel: "Classroom",
     },
     {
       original:
         "https://s3-alpha-sig.figma.com/img/87b5/2d3c/5a80baba30ab684f5cf4b39b23dcec02?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MbLt~IU9y9BMyZMnkMqneQ5RVKTG40gS5HdBIaA1IxEaLlaREPJMaXdr6kRZ6aCNTHzzjfyXExx9MyA4uiABx57BtxV~ycmUL-xB9Vorh27ZClFD6mmhjTFe6dsAsl2dxk646gL1sdCiVjodQ87IjJD5FiQFrv90tfTCrABn6Ch-iPDO3~VItMMlht8lFCN5nw436akCvw3cpDSsHLw0zjIwoaKVLMtkPSmx4wNhDYfREE67npXu1JuOMusLMm9WcffGQxBObEBE~pMwMok4lVUqNLC35p6Y7MAHp2giFCAK51lprv7BadA1v6Qc~YS2H~0ZgZuuSD~VxuSL2oIj5w__",
       thumbnail:
         "https://s3-alpha-sig.figma.com/img/87b5/2d3c/5a80baba30ab684f5cf4b39b23dcec02?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MbLt~IU9y9BMyZMnkMqneQ5RVKTG40gS5HdBIaA1IxEaLlaREPJMaXdr6kRZ6aCNTHzzjfyXExx9MyA4uiABx57BtxV~ycmUL-xB9Vorh27ZClFD6mmhjTFe6dsAsl2dxk646gL1sdCiVjodQ87IjJD5FiQFrv90tfTCrABn6Ch-iPDO3~VItMMlht8lFCN5nw436akCvw3cpDSsHLw0zjIwoaKVLMtkPSmx4wNhDYfREE67npXu1JuOMusLMm9WcffGQxBObEBE~pMwMok4lVUqNLC35p6Y7MAHp2giFCAK51lprv7BadA1v6Qc~YS2H~0ZgZuuSD~VxuSL2oIj5w__",
+      thumbnailLabel: "Lounge",
     },
     {
       original:
         "https://s3-alpha-sig.figma.com/img/9819/c929/7b7fb2cc90ff5e49b8af56d862cf3185?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QYZPJU5PltaeXQJttRmz6EN2dnc0sUuTVQrLO7Us2VeXiRVFP9R2kBLre3X87uur5OdpMamSi20vAqlU3Hnbb7SNfaS6xeiySv5erx~JOibujZy8XoPTXdVEcFNkdVh8zozJvqn7NKShVyrgX2oWgyIgBWv~4bMJf3AgsBfjaSuFJYxj-JjUpKUTNgFpbxeVdop~DfWpS44Xs-WtEwr6NdjsDenAhDNAoA8QiTJWB0mimVaXGVSRHCGcuME7EpBmff0aHvVuE2xVnrWNfbYIcALLnP-oAXYOintzpipY2bV9bDdDWxjl5TMbXdVgt8SeEGiDIqiBS~SxCTddrRzZ8A__",
       thumbnail:
         "https://s3-alpha-sig.figma.com/img/9819/c929/7b7fb2cc90ff5e49b8af56d862cf3185?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QYZPJU5PltaeXQJttRmz6EN2dnc0sUuTVQrLO7Us2VeXiRVFP9R2kBLre3X87uur5OdpMamSi20vAqlU3Hnbb7SNfaS6xeiySv5erx~JOibujZy8XoPTXdVEcFNkdVh8zozJvqn7NKShVyrgX2oWgyIgBWv~4bMJf3AgsBfjaSuFJYxj-JjUpKUTNgFpbxeVdop~DfWpS44Xs-WtEwr6NdjsDenAhDNAoA8QiTJWB0mimVaXGVSRHCGcuME7EpBmff0aHvVuE2xVnrWNfbYIcALLnP-oAXYOintzpipY2bV9bDdDWxjl5TMbXdVgt8SeEGiDIqiBS~SxCTddrRzZ8A__",
+      thumbnailLabel: "Meeting Room",
     },
     {
       original:
         "https://s3-alpha-sig.figma.com/img/10c5/519b/9cf88d9c5a566567482943f2bb060af0?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VQGF0qPf33DZgdM4snndtWqPJy4T-HLK28JjWMEqc5eaLknaiwGlRxFpuhoIxqQzPQi2XE3lnJyE1f-epP9REWZIofEuK6QeHCJt~0nXA200Z~ogmxyfgxRmFLW0UX1YZvLKdIgRMC~ZZWojra7HF6uryhVxG3RBrgOow5C8yCHjZfG0xUZVleIKX8hVieT-0Td1g-89I1lJid-hjT5U4k9NdOVHAx7a~b~WKllPy4MneIEfn39G9h1QgNr5exfAU77YI~Bu5PLDlwdcyCvEDRYdfyNBCsd42MYSfmIeXTFdEsAgjj~hRwMy5WtwrQGfNh3zxnL5pC10rNkAdSy36w__",
       thumbnail:
         "https://s3-alpha-sig.figma.com/img/10c5/519b/9cf88d9c5a566567482943f2bb060af0?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VQGF0qPf33DZgdM4snndtWqPJy4T-HLK28JjWMEqc5eaLknaiwGlRxFpuhoIxqQzPQi2XE3lnJyE1f-epP9REWZIofEuK6QeHCJt~0nXA200Z~ogmxyfgxRmFLW0UX1YZvLKdIgRMC~ZZWojra7HF6uryhVxG3RBrgOow5C8yCHjZfG0xUZVleIKX8hVieT-0Td1g-89I1lJid-hjT5U4k9NdOVHAx7a~b~WKllPy4MneIEfn39G9h1QgNr5exfAU77YI~Bu5PLDlwdcyCvEDRYdfyNBCsd42MYSfmIeXTFdEsAgjj~hRwMy5WtwrQGfNh3zxnL5pC10rNkAdSy36w__",
+      thumbnailLabel: "Seminar Hall",
     },
     {
       original:
@@ -59,6 +65,7 @@ const HomePage = () => {
 
       thumbnail:
         "https://s3-alpha-sig.figma.com/img/7b62/cf7e/7e4d08459c623f03c6d58748af98a7a7?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BnKaBeuC4KxqdsMT-tC8lsoojXS7p7mXA1vogHnVEJUQszYVFPBjL2JmJLloex-Dbq7vpWMgGsVQkMAqkRhdRpnBwMtZKLeI~xsArf~wAJFs2SeTKu-sQD4IaVCjmcfcbUW5o4tSotlb5iW6ay7D3k9WVvMTLBJwFZbkPvz~pF2IGfDoMhsfBAx7gDEO3P2V39907kXjhHO2kgkysA~-Y5fB2XEYitKOmrzzwlGFoQSK15wdXLZtdgs~Erx-18v092XjuSTIlimj9rzKX1XjiFm3oOvi7cwW1c78vBwhzdX7hzbJLeVMMBGYcdA0Eh-gNs4FNA0zy~49flaVJO1qoQ__",
+      thumbnailLabel: "Ground",
     },
     {
       original:
@@ -66,6 +73,7 @@ const HomePage = () => {
 
       thumbnail:
         "https://s3-alpha-sig.figma.com/img/be2f/7c5b/4fec2896ce1cc82697f10d12557f406e?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ebinLC6nsGt2-jOPpEUoIIjXsS-MN2QEFD8VxpHKAxVjhqTqLWVkF-zcM2kB-RvYw~fbSCbZmW3vur59FnkzZWS-O2C-pp~hmiCvkG8VNmQ4M9aISH-kxucJ6x3l-q36-HfV9F3tZYr96XxceFDqLu8lcCfnJ2pPwl0ni-JMlaryJLjUVzDLqx3hLhKW95vgyS3MmJMPfyNKIbNIFS3qwHdDCCGitC06Zb4nCvOMRw6U30lfrZ9T6ystw0aE2zpUk~tgaHAUCxvWmfvfzT~9jQvhWZ7TsQEMwp2ngKkX7OlkCr3ln7eozQfq~ZKHMbqQh2i0HgR-NWgXNDHQxXSq3g__",
+      thumbnailLabel: "Parking",
     },
     {
       original:
@@ -73,6 +81,7 @@ const HomePage = () => {
 
       thumbnail:
         "https://s3-alpha-sig.figma.com/img/4357/0709/f38fe819364d8273c1ecf3abc8a56c51?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pdD2jBkVf0LHcIVDJztmoUu0Nsvczco7HJuVWJqfdmagKDKSdAcCu9aeoK2Q2pxgqcI3ophBMrJOh2udQ6eYIblWXj82c9FGyDG4WAa3bDSOeyBOnZSh-g-xueqKsM1~YA9P-OvkpK~TbLU3EwRHThCh0RXjpjLHHcDqnzIxjGN~AanzjwnoeyPt5kssRxGHRJDQWPwXgmYR2w68wQJpV2~JH5DGeUYX3-QFC46D1cq1PfmP8uQBzDe0UwpvmundhugQMfzO~jNexOewfmvoMnqvGmzaZMPTDGKLTQSJ-cs60u7JjAW7co13fBWTH37Sh6~Y97B6MGex54f3eeAruw__",
+      thumbnailLabel: "Students",
     },
   ];
 
@@ -272,8 +281,14 @@ const HomePage = () => {
         <div className="program-cards">
           <div className="program-card1">
             <div className="program-top1">
-              <h2 className="program-heading">Exclusive Education</h2>
-              <div className="hexagon-container"></div>
+              <h2 className="program-heading">EXCLUSIVE EDUCATION</h2>
+              <div className="hexagon-container">
+                <img
+                  className="black-bachelor-cap"
+                  src={blackBachelor}
+                  alt="bachelor-cap"
+                />
+              </div>
               <div className="program-para">
                 <p className="program-lines">
                   Lorem Ipsum is simply dummy text of the printing and
@@ -286,8 +301,14 @@ const HomePage = () => {
           </div>
           <div className="program-card2">
             <div className="program-top2">
-              <h2 className="program-heading">Thrilling activities</h2>
-              <div className="hexagon-container"></div>
+              <h2 className="program-heading">THRILLING ACTIVITIES</h2>
+              <div className="hexagon-container">
+                <img
+                  className="black-book"
+                  src={blackBook}
+                  alt="bachelor-cap"
+                />
+              </div>
               <div className="program-para">
                 <p className="program-lines">
                   Lorem Ipsum is simply dummy text of the printing and
@@ -300,8 +321,14 @@ const HomePage = () => {
           </div>
           <div className="program-card3">
             <div className="program-top3">
-              <h2 className="program-heading">Teaching & Learning</h2>
-              <div className="hexagon-container"></div>
+              <h2 className="program-heading">TEACHING & LEARNING</h2>
+              <div className="hexagon-container">
+                <img
+                  className="black-bachelor-cap"
+                  src={blackBachelor}
+                  alt="bachelor-cap"
+                />
+              </div>
               <div className="program-para">
                 <p className="program-lines">
                   Lorem Ipsum is simply dummy text of the printing and
@@ -313,6 +340,79 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="slanted">
+        <img
+          className="slanted-photo"
+          src="https://s3-alpha-sig.figma.com/img/c48a/8e99/138cf858b887e690786c4a7eb358706e?Expires=1713139200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TfqVbW2eyvmMDPYyqKwoFOIyw1aiRZOFifkpxrhqz0kE7lMAbrgYzwE9hDJQgH1u~siO6n9nZRUT253NKEMLQBG1W2brSGyykyaATswdOmr91XuT4KXzPixHzQmDFDHU2J1SmzJb7zWZAIbBVuVh7bEfrEE3n3zif~0v~jQjKuxo05EWqOd1syFwbx9ggrFpvf1501BSxbPEayi9x0NxFTc9lf4Ng3un0RaJgyUDeUURyQM0~yklxLYJjOSzbyOEgIeizNAYhHZLHfJJJqQLlCoWy1mFE50rcxp7jSoN6W6w9GO9jf51ns-PBHJZ3wxXB8H2aGh5JRpQ8Do6ZudJ9A__"
+          alt="slanted photo"
+        />
+      </div>
+
+      <div className="gallery-section">
+        <div className="gallery-heading">
+          <h1>DISCOVER OUR GALLERY</h1>
+          <br></br>
+          <div>
+            <p className="view-all-section">
+              View our full gallery. <p className="view-all-btn">View All</p>
+            </p>
+          </div>
+        </div>
+        <ReactSlider />
+      </div>
+
+      <div className="bottom-form">
+        <div className="left-half-form-section">
+          <h1 style={{ color: "white" }}>
+            <b>
+              LEARN MORE ABOUT <br></br> OUR SCHOOL'S COURSES
+            </b>
+          </h1>
+          <form>
+            <div className="name-input">
+              <input type="text" placeholder="FIRST NAME" />
+              <input type="text" placeholder="LAST NAME" />
+            </div>
+
+            <div className="mail-phone-input">
+              <div className="email-input">
+                <input type="email" placeholder="EMAIL" />
+                <p>
+                  {" "}
+                  <p style={{ color: "white" }}>
+                    Lorem Ipsum is simply dummy text of the printing <br></br>
+                    and typesetting industry. Lorem Ipsum.
+                  </p>
+                </p>
+              </div>
+
+              <div className="phone-input">
+                <input type="number" placeholder="PHONE NUMBER" />
+                <div className="checkbox-p">
+                  <input type="checkbox" className="form-checkbox" />
+                  <p style={{ color: "white" }}>DONT TEXT ME AT THIS NUMBER</p>
+                </div>
+              </div>
+            </div>
+            <div className="course-btn-input">
+              <input
+                className="course-input"
+                type="text"
+                placeholder="WHICH COURSES ARE YOU INTERESTED IN?"
+              />
+              <button className="learn-more-btn">
+                <b>SPEAK TO REPRESENTATIVE</b>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div className="right-half-form-section"></div>
+      </div>
+
+      <div className="blog-carousel">
+        <BlogSlider />
       </div>
     </div>
   );
