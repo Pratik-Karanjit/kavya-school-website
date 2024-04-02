@@ -20,9 +20,9 @@ function BlogSlider() {
       id: 2,
       imageUrl: "",
       heading: "LATEST BLOG POST",
-      topic: "We believe everyone has the capacity to be creative.",
+      topic: "WE BELIEVE EVERYONE HAS THE CAPACITY TO BE CREATIVE.",
       description: "Lorem Ipsum is simply  printing and typesetting industry.",
-      buttonName: "Read More",
+      buttonName: "READ MORE",
     },
   ]);
 

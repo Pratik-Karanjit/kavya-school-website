@@ -10,6 +10,10 @@ import blackBook from "../src/photos/black-book.png";
 import Carousel from "react-elastic-carousel";
 import ReactSlider from "./ReactSlider";
 import BlogSlider from "./photos/BlogSlider";
+import ProfileSlider from "./ProfileSlider.jsx";
+import facebook from "../src/photos/facebook.png";
+import linkedin from "../src/photos/linkedin.png";
+import twitter from "../src/photos/twitter.png";
 
 const HomePage = () => {
   const [changeNavColor, setChangeNavColor] = useState(false);
@@ -81,6 +85,15 @@ const HomePage = () => {
 
       thumbnail:
         "https://s3-alpha-sig.figma.com/img/4357/0709/f38fe819364d8273c1ecf3abc8a56c51?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pdD2jBkVf0LHcIVDJztmoUu0Nsvczco7HJuVWJqfdmagKDKSdAcCu9aeoK2Q2pxgqcI3ophBMrJOh2udQ6eYIblWXj82c9FGyDG4WAa3bDSOeyBOnZSh-g-xueqKsM1~YA9P-OvkpK~TbLU3EwRHThCh0RXjpjLHHcDqnzIxjGN~AanzjwnoeyPt5kssRxGHRJDQWPwXgmYR2w68wQJpV2~JH5DGeUYX3-QFC46D1cq1PfmP8uQBzDe0UwpvmundhugQMfzO~jNexOewfmvoMnqvGmzaZMPTDGKLTQSJ-cs60u7JjAW7co13fBWTH37Sh6~Y97B6MGex54f3eeAruw__",
+      thumbnailLabel: "Students",
+    },
+    {
+      original:
+        "https://s3-alpha-sig.figma.com/img/0a11/cc92/d16240b15d8207b76146716b7f97a297?Expires=1713139200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Lowm6MvWccHt0J9ilKyXkAT~ZzYk8SFz1W~u45IZeGASspp59HdATVfou-0AJJ38DMfrxagAYbayggwPoQmpFW5FbqPKhO5ntBfbRgMk7m8jvcqjxKpOtysFHa1dnqyjfCnP9aYrSdFCZcQXa3XR8wszyRlFXlWtvKDlzE0wegGi7ImTF9rHNQ0xsM3kKZ0aLTeZgdsFU7Fa3eSxtcJylv~Tj754ZKzDWQVe6VatKdogPZauaqvMa~f6ozPyogbSTFu~jM~2Y1XHfKhbBPgHqkaJNwGz9wDiiINbBT4cOIco5MIkVODCMZ3STjoaepoXhzRUum1jcTj08KxXhJDYvg__",
+
+      thumbnail:
+        "https://s3-alpha-sig.figma.com/img/0a11/cc92/d16240b15d8207b76146716b7f97a297?Expires=1713139200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Lowm6MvWccHt0J9ilKyXkAT~ZzYk8SFz1W~u45IZeGASspp59HdATVfou-0AJJ38DMfrxagAYbayggwPoQmpFW5FbqPKhO5ntBfbRgMk7m8jvcqjxKpOtysFHa1dnqyjfCnP9aYrSdFCZcQXa3XR8wszyRlFXlWtvKDlzE0wegGi7ImTF9rHNQ0xsM3kKZ0aLTeZgdsFU7Fa3eSxtcJylv~Tj754ZKzDWQVe6VatKdogPZauaqvMa~f6ozPyogbSTFu~jM~2Y1XHfKhbBPgHqkaJNwGz9wDiiINbBT4cOIco5MIkVODCMZ3STjoaepoXhzRUum1jcTj08KxXhJDYvg__",
+
       thumbnailLabel: "Students",
     },
   ];
@@ -414,6 +427,77 @@ const HomePage = () => {
       <div className="blog-carousel">
         <BlogSlider />
       </div>
+
+      <div className="profile-carousel">
+        <ProfileSlider />
+      </div>
+
+      <div className="join-kavya">
+        <h1>JOIN KAVYA SCHOOL</h1>
+        <div className="join-buttons">
+          <button>
+            <b>LEARNER</b>
+          </button>
+          <button>
+            <b>TEACHER</b>
+          </button>
+          <button>
+            <b>PARENTS</b>
+          </button>
+        </div>
+      </div>
+
+      <div className="footer">
+        <div className="footer-container-1">
+          <img src="https://kavyaschool.edu.np/images/Kavya-Ing.svg" />
+          <p>
+            Lorem Ipsum is simply dummy text of <br></br>the printing and
+            typesetting industry. <br></br> Lorem Ipsum has been the industry's{" "}
+            <br></br>
+            of the printing and typesetting industry.
+          </p>
+
+          <div className="social-hexagons">
+            <div className="social-hexagon-1">
+              <img className="facebook-logo" src={facebook} alt="facebook" />
+            </div>
+            <div className="social-hexagon-2">
+              <img className="facebook-logo" src={facebook} alt="facebook" />
+            </div>
+            <div className="social-hexagon-3">
+              <img className="facebook-logo" src={facebook} alt="facebook" />
+            </div>
+          </div>
+        </div>
+        <div className="contact-info">
+          <h3>Contact Info</h3>
+          <p>kavya School</p>
+          <p>021-500050</p>
+          <p>New Baneshwor, Kathmandu</p>
+        </div>
+
+        <div className="quick-links">
+          <h3>Quick Links</h3>
+          <a href="/">Home</a> <br></br>
+          <a href="/courses">Courses</a>
+          <br></br>
+          <a href="/programs">Programs</a>
+          <br></br>
+          <a href="/why-kavya">Why Kavya</a>
+          <br></br>
+          <a href="/admission">Admission Process</a>
+          <br></br>
+          <a href="/blog">Blog</a>
+        </div>
+
+        <div className="others">
+          <h3>Others</h3>
+          <p>Privacy and Policy</p>
+          <p>Terms & Condition</p>
+        </div>
+      </div>
+
+      <div className="copyright">Copyright © kavya school</div>
     </div>
   );
 };
