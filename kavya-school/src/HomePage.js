@@ -485,7 +485,7 @@ const HomePage = () => {
           <br></br>
           <a href="/programs">Programs</a>
           <br></br>
-          <a href="/why-kavya">Why Kavya</a>
+          <a href="/aboutus">Why Kavya</a>
           <br></br>
           <a href="/admission">Admission Process</a>
           <br></br>

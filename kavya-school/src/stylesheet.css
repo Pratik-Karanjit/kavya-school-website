@@ -1004,3 +1004,19 @@ body {
   border: none;
   margin-right: 5rem;
 }
+
+@media only screen and (max-width: 400) and (min-width: 200px) {
+  .kavya-img {
+    width: 100%;
+  }
+  .hero-text {
+    width: 100%;
+    position: absolute;
+    color: white;
+    font-size: 50px;
+    font-weight: 750;
+  }
+  .left-para {
+    width: 100%;
+  }
+}
