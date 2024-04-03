@@ -174,7 +174,7 @@ const HomePage = () => {
                 <input type="email" placeholder="EMAIL" />
                 <p>
                   {" "}
-                  <p>
+                  <p style={{ color: "rgb(163 137 137)" }}>
                     Lorem Ipsum is simply dummy text of the printing <br></br>
                     and typesetting industry. Lorem Ipsum.
                   </p>
@@ -394,7 +394,7 @@ const HomePage = () => {
                 <input type="email" placeholder="EMAIL" />
                 <p>
                   {" "}
-                  <p style={{ color: "white" }}>
+                  <p style={{ color: "rgb(163 137 137)" }}>
                     Lorem Ipsum is simply dummy text of the printing <br></br>
                     and typesetting industry. Lorem Ipsum.
                   </p>
@@ -405,7 +405,9 @@ const HomePage = () => {
                 <input type="number" placeholder="PHONE NUMBER" />
                 <div className="checkbox-p">
                   <input type="checkbox" className="form-checkbox" />
-                  <p style={{ color: "white" }}>DONT TEXT ME AT THIS NUMBER</p>
+                  <p style={{ color: "rgb(163 137 137)" }}>
+                    DONT TEXT ME AT THIS NUMBER
+                  </p>
                 </div>
               </div>
             </div>
@@ -462,10 +464,10 @@ const HomePage = () => {
               <img className="facebook-logo" src={facebook} alt="facebook" />
             </div>
             <div className="social-hexagon-2">
-              <img className="facebook-logo" src={facebook} alt="facebook" />
+              <img className="linkedin-logo" src={linkedin} alt="linkedin" />
             </div>
             <div className="social-hexagon-3">
-              <img className="facebook-logo" src={facebook} alt="facebook" />
+              <img className="twitter-logo" src={twitter} alt="twitter" />
             </div>
           </div>
         </div>
