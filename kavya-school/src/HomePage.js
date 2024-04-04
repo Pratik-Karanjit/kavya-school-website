@@ -87,15 +87,6 @@ const HomePage = () => {
         "https://s3-alpha-sig.figma.com/img/4357/0709/f38fe819364d8273c1ecf3abc8a56c51?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pdD2jBkVf0LHcIVDJztmoUu0Nsvczco7HJuVWJqfdmagKDKSdAcCu9aeoK2Q2pxgqcI3ophBMrJOh2udQ6eYIblWXj82c9FGyDG4WAa3bDSOeyBOnZSh-g-xueqKsM1~YA9P-OvkpK~TbLU3EwRHThCh0RXjpjLHHcDqnzIxjGN~AanzjwnoeyPt5kssRxGHRJDQWPwXgmYR2w68wQJpV2~JH5DGeUYX3-QFC46D1cq1PfmP8uQBzDe0UwpvmundhugQMfzO~jNexOewfmvoMnqvGmzaZMPTDGKLTQSJ-cs60u7JjAW7co13fBWTH37Sh6~Y97B6MGex54f3eeAruw__",
       thumbnailLabel: "Students",
     },
-    {
-      original:
-        "https://s3-alpha-sig.figma.com/img/0a11/cc92/d16240b15d8207b76146716b7f97a297?Expires=1713139200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Lowm6MvWccHt0J9ilKyXkAT~ZzYk8SFz1W~u45IZeGASspp59HdATVfou-0AJJ38DMfrxagAYbayggwPoQmpFW5FbqPKhO5ntBfbRgMk7m8jvcqjxKpOtysFHa1dnqyjfCnP9aYrSdFCZcQXa3XR8wszyRlFXlWtvKDlzE0wegGi7ImTF9rHNQ0xsM3kKZ0aLTeZgdsFU7Fa3eSxtcJylv~Tj754ZKzDWQVe6VatKdogPZauaqvMa~f6ozPyogbSTFu~jM~2Y1XHfKhbBPgHqkaJNwGz9wDiiINbBT4cOIco5MIkVODCMZ3STjoaepoXhzRUum1jcTj08KxXhJDYvg__",
-
-      thumbnail:
-        "https://s3-alpha-sig.figma.com/img/0a11/cc92/d16240b15d8207b76146716b7f97a297?Expires=1713139200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Lowm6MvWccHt0J9ilKyXkAT~ZzYk8SFz1W~u45IZeGASspp59HdATVfou-0AJJ38DMfrxagAYbayggwPoQmpFW5FbqPKhO5ntBfbRgMk7m8jvcqjxKpOtysFHa1dnqyjfCnP9aYrSdFCZcQXa3XR8wszyRlFXlWtvKDlzE0wegGi7ImTF9rHNQ0xsM3kKZ0aLTeZgdsFU7Fa3eSxtcJylv~Tj754ZKzDWQVe6VatKdogPZauaqvMa~f6ozPyogbSTFu~jM~2Y1XHfKhbBPgHqkaJNwGz9wDiiINbBT4cOIco5MIkVODCMZ3STjoaepoXhzRUum1jcTj08KxXhJDYvg__",
-
-      thumbnailLabel: "Students",
-    },
   ];
 
   return (
@@ -263,7 +254,6 @@ const HomePage = () => {
             showFullscreenButton={false}
             showNav={false}
           />
-          ;
         </div>
       </div>
       <div className="top-courses-section">
@@ -453,10 +443,9 @@ const HomePage = () => {
         <div className="footer-container-1">
           <img src="https://kavyaschool.edu.np/images/Kavya-Ing.svg" />
           <p>
-            Lorem Ipsum is simply dummy text of <br></br>the printing and
-            typesetting industry. <br></br> Lorem Ipsum has been the industry's{" "}
+            Lorem Ipsum is simply dummy text of the printing and <br></br>{" "}
+            typesetting industry. Lorem Ipsum has been the <br></br> industry.{" "}
             <br></br>
-            of the printing and typesetting industry.
           </p>
 
           <div className="social-hexagons">

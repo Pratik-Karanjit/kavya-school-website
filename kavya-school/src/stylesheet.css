@@ -794,6 +794,8 @@ body {
   font-size: 15px;
   line-height: 20px;
   border: none;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .profile-carousel {
@@ -802,7 +804,7 @@ body {
 }
 
 .profile-img {
-  height: 260px;
+  height: 235px;
   width: 340px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   object-fit: cover;
@@ -841,7 +843,7 @@ body {
 }
 
 .footer-container-1 {
-  width: 30%;
+  width: 35%;
   letter-spacing: 0.5px;
   line-height: 30px;
 }
@@ -871,19 +873,19 @@ body {
 }
 
 .social-hexagon-1 .facebook-logo {
-  height: 25px;
-  width: 25px;
+  height: 17.5px;
+  width: 20px;
   cursor: pointer;
 }
 
 .social-hexagon-2 .linkedin-logo {
-  height: 25px;
-  width: 25px;
+  height: 17px;
+  width: 17px;
   cursor: pointer;
 }
 .social-hexagon-3 .twitter-logo {
-  height: 25px;
-  width: 25px;
+  height: 20.98px;
+  width: 19.67px;
   cursor: pointer;
 }
 
@@ -952,7 +954,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .profile-right-section-name {
@@ -960,7 +962,7 @@ body {
 }
 
 .profile-right-section-desc {
-  line-height: 30px;
+  line-height: 25px;
   letter-spacing: 1px;
 }
 
@@ -1005,7 +1007,22 @@ body {
   margin-right: 5rem;
 }
 
-@media only screen and (max-width: 400) and (min-width: 200px) {
+.image-gallery-thumbnails-wrapper.image-gallery-thumbnails-bottom.thumbnails-swipe-horizontal {
+  touch-action: pan-y;
+  position: absolute !important;
+  bottom: 100px !important;
+  right: 100px;
+}
+
+/* .rec.rec-swipable-1 {
+  display: none;
+}
+
+.rec.rec-swipable-2 {
+  display: none;
+} */
+
+/* @media only screen and (max-width: 400) and (min-width: 200px) {
   .kavya-img {
     width: 100%;
   }
@@ -1019,4 +1036,41 @@ body {
   .left-para {
     width: 100%;
   }
+} */
+
+.profile-carousel .rec.rec-item-wrapper {
+  width: 100%;
+  padding: 0;
+}
+
+.profile-carousel .sc-hLQSwg.diVwMV.rec.rec-slider {
+  display: flex;
+}
+
+.profile-carousel .sc-hLQSwg.diVwMV.rec.rec-slider > .rec {
+  flex: 0 0 100%;
+}
+
+.profile-carousel .sc-dmyCSP.hfpZmZ.rec.rec-slider-container {
+  overflow: hidden;
+  width: 100%;
+  height: 20rem;
+}
+
+.blog-carousel .rec.rec-item-wrapper {
+  width: 100%;
+  padding: 0;
+}
+
+.blog-carousel .sc-hLQSwg.diVwMV.rec.rec-slider {
+  display: flex;
+}
+
+.blog-carousel .sc-hLQSwg.diVwMV.rec.rec-slider > .rec {
+  flex: 0 0 100%;
+}
+
+.blog-carousel .sc-dmyCSP.hfpZmZ.rec.rec-slider-container {
+  overflow: hidden;
+  width: 100%;
 }
