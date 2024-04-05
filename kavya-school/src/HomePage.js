@@ -149,11 +149,13 @@ const HomePage = () => {
           </p>
         </div>
         <div className="right-wrapper">
-          <h1>
-            <b>
-              LEARN MORE ABOUT <br></br> OUR SCHOOL'S COURSES
-            </b>
-          </h1>
+          <div className="right-wrapper-heading">
+            <h1>
+              <b>
+                LEARN MORE ABOUT <br></br> OUR SCHOOL'S COURSES
+              </b>
+            </h1>
+          </div>
           <form>
             <div className="name-input">
               <input type="text" placeholder="FIRST NAME" />
