@@ -27,6 +27,11 @@ const HomePage = () => {
   };
   window.addEventListener("scroll", changeBackground);
 
+  const handleButtonClick = () => {
+    const nav = document.getElementById("mynav");
+    nav.classList.toggle("show");
+  };
+
   const images = [
     {
       original:
@@ -130,16 +135,32 @@ const HomePage = () => {
             </button>
           </a>
         </div>
-      </div>
 
-      <input
-        type="checkbox"
-        id="hamburger-checkbox"
-        class="hamburger-menu-checkbox"
-      />
-      <label for="hamburger-checkbox" class="hamburger-menu">
-        ☰ Menu
-      </label>
+        <nav className="mobile-nav">
+          <button
+            class="my-button"
+            id="my-button"
+            className="hamburger-icon"
+            onClick={handleButtonClick}
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul id="mynav">
+            <li>
+              <a href="#">home.</a>
+            </li>
+            <li>
+              <a href="#">work.</a>
+            </li>
+            <li>
+              <a href="#">about.</a>
+            </li>
+            <li>
+              <a href="#">contact.</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       <div className="hero-text">
         SMART SCHOOL <br></br> FOR SMART STUDENT

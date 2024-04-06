@@ -1224,7 +1224,7 @@ body {
     background-size: cover;
   }
   .image-gallery-content .image-gallery-slide .image-gallery-image {
-    height: auto;
+    max-height: 220px !important;
   }
   .image-gallery-thumbnails-wrapper.image-gallery-thumbnails-bottom.thumbnails-swipe-horizontal {
     display: none;
@@ -1395,5 +1395,100 @@ body {
     width: auto;
     line-height: 40px;
     letter-spacing: 0.5px;
+  }
+}
+
+.my-button {
+  background-color: transparent;
+  border: 10px;
+  color: black;
+  cursor: pointer;
+  font-size: 30px;
+  margin-left: 32px;
+  float: left;
+  line-height: 70px;
+  display: none;
+}
+
+.my-button:focus {
+  outline: none;
+}
+
+nav {
+  background-color: grey;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  padding: 20px 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .my-button {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .my-button {
+    display: block;
+  }
+  nav {
+    background-color: rgb(62, 109, 149);
+  }
+
+  .mobile-nav {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .hero-text {
+    display: none;
+  }
+
+  .navColor {
+    display: none;
   }
 }
