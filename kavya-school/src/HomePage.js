@@ -131,6 +131,16 @@ const HomePage = () => {
           </a>
         </div>
       </div>
+
+      <input
+        type="checkbox"
+        id="hamburger-checkbox"
+        class="hamburger-menu-checkbox"
+      />
+      <label for="hamburger-checkbox" class="hamburger-menu">
+        ☰ Menu
+      </label>
+
       <div className="hero-text">
         SMART SCHOOL <br></br> FOR SMART STUDENT
       </div>
