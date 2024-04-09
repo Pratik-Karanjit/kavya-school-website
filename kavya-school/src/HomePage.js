@@ -17,6 +17,7 @@ import twitter from "../src/photos/twitter.png";
 
 const HomePage = () => {
   const [changeNavColor, setChangeNavColor] = useState(false);
+  const [hideNavbar, setHideNavbar] = useState(false);
 
   const changeBackground = () => {
     if (window.scrollY > 300) {
@@ -27,6 +28,15 @@ const HomePage = () => {
   };
   window.addEventListener("scroll", changeBackground);
 
+  const hideNav = () => {
+    if (window.scrollY > 300) {
+      setHideNavbar(true);
+    } else {
+      setHideNavbar(false);
+    }
+  };
+  window.addEventListener("scroll", hideNav);
+
   const handleButtonClick = () => {
     const nav = document.getElementById("mynav");
     nav.classList.toggle("show");
@@ -35,72 +45,73 @@ const HomePage = () => {
   const images = [
     {
       original:
-        "https://s3-alpha-sig.figma.com/img/5b0e/bea1/be838bd314970a20f1a3bf7973fabe27?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZu~v2uOFjSB6d4j7r1xaGk7q3a95wJBmlaEUXqSr~E0GPaoO~RUbkF8Q-mOG1wVO9R6hv60oCuUU-RSbyD9KdS~mfnFhF1ERRAngFSNpE8OtxdiEpQcWIRc8SLmfVUYRQPe5WjCiVddgQ7L9mi~JfEdmpScvIAaNnzgRvT75zts8sEHWrKlUtJNmk2gao2TSsohjCP8d3KgOZqOx7NteOfZG75Gy5Efo39DYrJ1PxyFt50Nq43RrpTAPW5q1QVRftU-VHvc34nS8nghCNtWD2~iEoN--SaYkzchco4073mXGySmahLpnZQlUDl7UznORxYEpQV~INh4MIKk3eHsKg__",
+        "https://s3-alpha-sig.figma.com/img/5b0e/bea1/be838bd314970a20f1a3bf7973fabe27?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dUhKS03JVImli3h04bSB2uxQ6HKCyJR76OE0v3npqih6wahvYX7CdXynoyRfJg3lwtyABYVYy4hZOGCfiz45oo~07o9rBmy6gGAOiARiKk6qzEV~lOaAjNTiNuCdg139p5kbjCaVfHjThi1~lbLDY5ug0bOujjjwdUyA14cOREIZipi5LJz1~veINH1ayLfBOi9S9dzsXWOTDDjBcdG15Qm9vzj7sLcY6~vszSYSml0ggxfua7dxALWPUUXsBwwL8Yr4jklNigAy67X3ux409628uB45DpmFQRMEdLC~RHYH0lYeSnjCmf3odrVOFrCIuG-g4YsyKOHxNPpSJ7UaQg__",
       thumbnail:
-        "https://s3-alpha-sig.figma.com/img/5b0e/bea1/be838bd314970a20f1a3bf7973fabe27?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZu~v2uOFjSB6d4j7r1xaGk7q3a95wJBmlaEUXqSr~E0GPaoO~RUbkF8Q-mOG1wVO9R6hv60oCuUU-RSbyD9KdS~mfnFhF1ERRAngFSNpE8OtxdiEpQcWIRc8SLmfVUYRQPe5WjCiVddgQ7L9mi~JfEdmpScvIAaNnzgRvT75zts8sEHWrKlUtJNmk2gao2TSsohjCP8d3KgOZqOx7NteOfZG75Gy5Efo39DYrJ1PxyFt50Nq43RrpTAPW5q1QVRftU-VHvc34nS8nghCNtWD2~iEoN--SaYkzchco4073mXGySmahLpnZQlUDl7UznORxYEpQV~INh4MIKk3eHsKg__",
+        "https://s3-alpha-sig.figma.com/img/5b0e/bea1/be838bd314970a20f1a3bf7973fabe27?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dUhKS03JVImli3h04bSB2uxQ6HKCyJR76OE0v3npqih6wahvYX7CdXynoyRfJg3lwtyABYVYy4hZOGCfiz45oo~07o9rBmy6gGAOiARiKk6qzEV~lOaAjNTiNuCdg139p5kbjCaVfHjThi1~lbLDY5ug0bOujjjwdUyA14cOREIZipi5LJz1~veINH1ayLfBOi9S9dzsXWOTDDjBcdG15Qm9vzj7sLcY6~vszSYSml0ggxfua7dxALWPUUXsBwwL8Yr4jklNigAy67X3ux409628uB45DpmFQRMEdLC~RHYH0lYeSnjCmf3odrVOFrCIuG-g4YsyKOHxNPpSJ7UaQg__",
       thumbnailLabel: "Kavya Roof",
     },
     {
       original:
-        "https://s3-alpha-sig.figma.com/img/9954/34b1/79b5f42acde348c01e9027b7bce153f7?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IeZKXgcAJkutLKdjQS8iwfOLQGEXTr3dysFPL8O~Ss3860omGNhtxaw2fbjv16lDcZI8xHSWLaA~WllMIDaOy6bgFCrLVwP2I2-~zX-gdyN8r80hl-xdXn-TrvpRt8XKc7BF5Yclu4DUOZvatLI-FxZRfo29sWeVeXeupn8BBK~LRw6qgbq-SpmgyS2BrPRJIpKmyhNzWzPIZY17cS12K-XdzzTdOmI2g0nkbNLs40Aib43EhOxX4~23G34FhcCFKibdjcuqSku4L9KOPBY-xZ7uK7brcWYxaRXlfVz1YkTcrA~IIAIu5kqgRZhYUYJu2gy-1tXh-SvmHXLm-eeliw__",
+        "https://s3-alpha-sig.figma.com/img/9954/34b1/79b5f42acde348c01e9027b7bce153f7?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RFasXALc-~nLxaiYtzhS5rjPjsAEJYNu3q2K7YisIH469blidIZ20RvkZLqtRgw67DHKqPfoeM60fiuP2gX6XPWoApjW4q0WFJOG9Pz-QgaJVK~jXJcPPTNF5w2~X~JsZil1~hMFBQwgd3UqySk1nEnZ~dY1ioDVqfIjoPJDU0sgGqz4vWc3a5A6abMrmqEMAoM5MMuWXEowxwGdi~mbmvR3hXGCUdbMocWVYJn5VPJs5ttrvSZa3DaIc0R-v~KQKCBsCNxZkDgA3OixjYJiLlSLHx-8mdIjnYbtH6fWgpuI7mZxR52atEQP7ZpCWwVGc7aQOSHk68EzTr0UEMquPg__",
       thumbnail:
-        "https://s3-alpha-sig.figma.com/img/9954/34b1/79b5f42acde348c01e9027b7bce153f7?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IeZKXgcAJkutLKdjQS8iwfOLQGEXTr3dysFPL8O~Ss3860omGNhtxaw2fbjv16lDcZI8xHSWLaA~WllMIDaOy6bgFCrLVwP2I2-~zX-gdyN8r80hl-xdXn-TrvpRt8XKc7BF5Yclu4DUOZvatLI-FxZRfo29sWeVeXeupn8BBK~LRw6qgbq-SpmgyS2BrPRJIpKmyhNzWzPIZY17cS12K-XdzzTdOmI2g0nkbNLs40Aib43EhOxX4~23G34FhcCFKibdjcuqSku4L9KOPBY-xZ7uK7brcWYxaRXlfVz1YkTcrA~IIAIu5kqgRZhYUYJu2gy-1tXh-SvmHXLm-eeliw__",
+        "https://s3-alpha-sig.figma.com/img/9954/34b1/79b5f42acde348c01e9027b7bce153f7?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RFasXALc-~nLxaiYtzhS5rjPjsAEJYNu3q2K7YisIH469blidIZ20RvkZLqtRgw67DHKqPfoeM60fiuP2gX6XPWoApjW4q0WFJOG9Pz-QgaJVK~jXJcPPTNF5w2~X~JsZil1~hMFBQwgd3UqySk1nEnZ~dY1ioDVqfIjoPJDU0sgGqz4vWc3a5A6abMrmqEMAoM5MMuWXEowxwGdi~mbmvR3hXGCUdbMocWVYJn5VPJs5ttrvSZa3DaIc0R-v~KQKCBsCNxZkDgA3OixjYJiLlSLHx-8mdIjnYbtH6fWgpuI7mZxR52atEQP7ZpCWwVGc7aQOSHk68EzTr0UEMquPg__",
       thumbnailLabel: "Classroom",
     },
     {
       original:
-        "https://s3-alpha-sig.figma.com/img/87b5/2d3c/5a80baba30ab684f5cf4b39b23dcec02?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MbLt~IU9y9BMyZMnkMqneQ5RVKTG40gS5HdBIaA1IxEaLlaREPJMaXdr6kRZ6aCNTHzzjfyXExx9MyA4uiABx57BtxV~ycmUL-xB9Vorh27ZClFD6mmhjTFe6dsAsl2dxk646gL1sdCiVjodQ87IjJD5FiQFrv90tfTCrABn6Ch-iPDO3~VItMMlht8lFCN5nw436akCvw3cpDSsHLw0zjIwoaKVLMtkPSmx4wNhDYfREE67npXu1JuOMusLMm9WcffGQxBObEBE~pMwMok4lVUqNLC35p6Y7MAHp2giFCAK51lprv7BadA1v6Qc~YS2H~0ZgZuuSD~VxuSL2oIj5w__",
+        "https://s3-alpha-sig.figma.com/img/87b5/2d3c/5a80baba30ab684f5cf4b39b23dcec02?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CW2~6LzoyTpfLi-ZWNQIRbobXgLKf09OxZ8xCcpLxktwHt3X2WJnTB0PPmpu69zjQayasqnz425n6RusVWGkSF4sEdoh~Dc0faVp0nXwr34-iz5hnNuq3ISVL0uYwWl434tThVYSXK9BsJRJeWq70qmUU0ebsXEBJjWClfwTZbMDGga9hl2-u006hdrUgOTSD1T9x5vhp8Oc~gYFFykfXA0ync2P-VIIFBBYNZpvlQQC5En82mhtFhKbTEtFqGUdDS4HvfasAdGbThjrI7LpcNbS7GqQKcOcPML6aC6k9V8ysgQotJA0-icdVHh04q0wn-pbQrSEW60npWkm~pYMNQ__",
       thumbnail:
-        "https://s3-alpha-sig.figma.com/img/87b5/2d3c/5a80baba30ab684f5cf4b39b23dcec02?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MbLt~IU9y9BMyZMnkMqneQ5RVKTG40gS5HdBIaA1IxEaLlaREPJMaXdr6kRZ6aCNTHzzjfyXExx9MyA4uiABx57BtxV~ycmUL-xB9Vorh27ZClFD6mmhjTFe6dsAsl2dxk646gL1sdCiVjodQ87IjJD5FiQFrv90tfTCrABn6Ch-iPDO3~VItMMlht8lFCN5nw436akCvw3cpDSsHLw0zjIwoaKVLMtkPSmx4wNhDYfREE67npXu1JuOMusLMm9WcffGQxBObEBE~pMwMok4lVUqNLC35p6Y7MAHp2giFCAK51lprv7BadA1v6Qc~YS2H~0ZgZuuSD~VxuSL2oIj5w__",
+        "https://s3-alpha-sig.figma.com/img/87b5/2d3c/5a80baba30ab684f5cf4b39b23dcec02?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CW2~6LzoyTpfLi-ZWNQIRbobXgLKf09OxZ8xCcpLxktwHt3X2WJnTB0PPmpu69zjQayasqnz425n6RusVWGkSF4sEdoh~Dc0faVp0nXwr34-iz5hnNuq3ISVL0uYwWl434tThVYSXK9BsJRJeWq70qmUU0ebsXEBJjWClfwTZbMDGga9hl2-u006hdrUgOTSD1T9x5vhp8Oc~gYFFykfXA0ync2P-VIIFBBYNZpvlQQC5En82mhtFhKbTEtFqGUdDS4HvfasAdGbThjrI7LpcNbS7GqQKcOcPML6aC6k9V8ysgQotJA0-icdVHh04q0wn-pbQrSEW60npWkm~pYMNQ__",
       thumbnailLabel: "Lounge",
     },
     {
       original:
-        "https://s3-alpha-sig.figma.com/img/9819/c929/7b7fb2cc90ff5e49b8af56d862cf3185?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QYZPJU5PltaeXQJttRmz6EN2dnc0sUuTVQrLO7Us2VeXiRVFP9R2kBLre3X87uur5OdpMamSi20vAqlU3Hnbb7SNfaS6xeiySv5erx~JOibujZy8XoPTXdVEcFNkdVh8zozJvqn7NKShVyrgX2oWgyIgBWv~4bMJf3AgsBfjaSuFJYxj-JjUpKUTNgFpbxeVdop~DfWpS44Xs-WtEwr6NdjsDenAhDNAoA8QiTJWB0mimVaXGVSRHCGcuME7EpBmff0aHvVuE2xVnrWNfbYIcALLnP-oAXYOintzpipY2bV9bDdDWxjl5TMbXdVgt8SeEGiDIqiBS~SxCTddrRzZ8A__",
+        "https://s3-alpha-sig.figma.com/img/9819/c929/7b7fb2cc90ff5e49b8af56d862cf3185?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oOtxt7z1EuTWbuUsGr6hdl~09XgmTB0H7Q7CG8QJ3TpHj6ZbufQw6hO1wxenXBuxcdvEDniVzmdmchnQp2hF3IotVqqKBpGF-dvig33vkPQuM1jX-jjUeC7EpG3LVzJv7GPNpeDejL-TszEi-QculJ4XlRAy9G0GwbXuFgESFHpsG-WBg~anzBE1qhfiYOfcJvFfiYKuonxcATa-8k7tt79h7RqmeaWSV97pOmNeWheDQqkiwe3a1dH9KrXcZUyXnsUd5d8MBcPONXi~WAr9lH7q0UCMziyuQ0IsR7sJtoeFhvhtM9m2dxmQzDACD5DsscpSWqCKrXtrzWiWg0anAQ__",
       thumbnail:
-        "https://s3-alpha-sig.figma.com/img/9819/c929/7b7fb2cc90ff5e49b8af56d862cf3185?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QYZPJU5PltaeXQJttRmz6EN2dnc0sUuTVQrLO7Us2VeXiRVFP9R2kBLre3X87uur5OdpMamSi20vAqlU3Hnbb7SNfaS6xeiySv5erx~JOibujZy8XoPTXdVEcFNkdVh8zozJvqn7NKShVyrgX2oWgyIgBWv~4bMJf3AgsBfjaSuFJYxj-JjUpKUTNgFpbxeVdop~DfWpS44Xs-WtEwr6NdjsDenAhDNAoA8QiTJWB0mimVaXGVSRHCGcuME7EpBmff0aHvVuE2xVnrWNfbYIcALLnP-oAXYOintzpipY2bV9bDdDWxjl5TMbXdVgt8SeEGiDIqiBS~SxCTddrRzZ8A__",
+        "https://s3-alpha-sig.figma.com/img/9819/c929/7b7fb2cc90ff5e49b8af56d862cf3185?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oOtxt7z1EuTWbuUsGr6hdl~09XgmTB0H7Q7CG8QJ3TpHj6ZbufQw6hO1wxenXBuxcdvEDniVzmdmchnQp2hF3IotVqqKBpGF-dvig33vkPQuM1jX-jjUeC7EpG3LVzJv7GPNpeDejL-TszEi-QculJ4XlRAy9G0GwbXuFgESFHpsG-WBg~anzBE1qhfiYOfcJvFfiYKuonxcATa-8k7tt79h7RqmeaWSV97pOmNeWheDQqkiwe3a1dH9KrXcZUyXnsUd5d8MBcPONXi~WAr9lH7q0UCMziyuQ0IsR7sJtoeFhvhtM9m2dxmQzDACD5DsscpSWqCKrXtrzWiWg0anAQ__",
       thumbnailLabel: "Meeting Room",
     },
     {
       original:
-        "https://s3-alpha-sig.figma.com/img/10c5/519b/9cf88d9c5a566567482943f2bb060af0?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VQGF0qPf33DZgdM4snndtWqPJy4T-HLK28JjWMEqc5eaLknaiwGlRxFpuhoIxqQzPQi2XE3lnJyE1f-epP9REWZIofEuK6QeHCJt~0nXA200Z~ogmxyfgxRmFLW0UX1YZvLKdIgRMC~ZZWojra7HF6uryhVxG3RBrgOow5C8yCHjZfG0xUZVleIKX8hVieT-0Td1g-89I1lJid-hjT5U4k9NdOVHAx7a~b~WKllPy4MneIEfn39G9h1QgNr5exfAU77YI~Bu5PLDlwdcyCvEDRYdfyNBCsd42MYSfmIeXTFdEsAgjj~hRwMy5WtwrQGfNh3zxnL5pC10rNkAdSy36w__",
+        "https://s3-alpha-sig.figma.com/img/10c5/519b/9cf88d9c5a566567482943f2bb060af0?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=J~-94SF6vsJHNb9wyeTLlhmx5qSptQZD8BD~vucZrB7unBsX6Fb3Q6VPN55qC1NXUFO1s3nLElpwh88CS2JWIWXmNHu-2u5mZHAUoruUTScBwDELUF9~nONLpDA7KMn9AGR4I8kueB16O4ZgXVWpu3GdiOH7DyDbi6Qmf-3xJgKqPIEQx6Mp1remfenuf0VEguCIUS1TvcSp-OZ0vY5kJCXWmgFoNaAA021LYrz2ZR5kVGPN04-1LAS0MP~ne8XJnF~pJKr4QCHmsD38xgXwYKl0Eknw2nfg~eBQh5VdHJTRELOZIR2Y7CtonnNrr3B2Z7Il4znBsjkmBvABzoRyrw__",
       thumbnail:
-        "https://s3-alpha-sig.figma.com/img/10c5/519b/9cf88d9c5a566567482943f2bb060af0?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VQGF0qPf33DZgdM4snndtWqPJy4T-HLK28JjWMEqc5eaLknaiwGlRxFpuhoIxqQzPQi2XE3lnJyE1f-epP9REWZIofEuK6QeHCJt~0nXA200Z~ogmxyfgxRmFLW0UX1YZvLKdIgRMC~ZZWojra7HF6uryhVxG3RBrgOow5C8yCHjZfG0xUZVleIKX8hVieT-0Td1g-89I1lJid-hjT5U4k9NdOVHAx7a~b~WKllPy4MneIEfn39G9h1QgNr5exfAU77YI~Bu5PLDlwdcyCvEDRYdfyNBCsd42MYSfmIeXTFdEsAgjj~hRwMy5WtwrQGfNh3zxnL5pC10rNkAdSy36w__",
+        "https://s3-alpha-sig.figma.com/img/10c5/519b/9cf88d9c5a566567482943f2bb060af0?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=J~-94SF6vsJHNb9wyeTLlhmx5qSptQZD8BD~vucZrB7unBsX6Fb3Q6VPN55qC1NXUFO1s3nLElpwh88CS2JWIWXmNHu-2u5mZHAUoruUTScBwDELUF9~nONLpDA7KMn9AGR4I8kueB16O4ZgXVWpu3GdiOH7DyDbi6Qmf-3xJgKqPIEQx6Mp1remfenuf0VEguCIUS1TvcSp-OZ0vY5kJCXWmgFoNaAA021LYrz2ZR5kVGPN04-1LAS0MP~ne8XJnF~pJKr4QCHmsD38xgXwYKl0Eknw2nfg~eBQh5VdHJTRELOZIR2Y7CtonnNrr3B2Z7Il4znBsjkmBvABzoRyrw__",
       thumbnailLabel: "Seminar Hall",
     },
     {
       original:
-        "https://s3-alpha-sig.figma.com/img/7b62/cf7e/7e4d08459c623f03c6d58748af98a7a7?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BnKaBeuC4KxqdsMT-tC8lsoojXS7p7mXA1vogHnVEJUQszYVFPBjL2JmJLloex-Dbq7vpWMgGsVQkMAqkRhdRpnBwMtZKLeI~xsArf~wAJFs2SeTKu-sQD4IaVCjmcfcbUW5o4tSotlb5iW6ay7D3k9WVvMTLBJwFZbkPvz~pF2IGfDoMhsfBAx7gDEO3P2V39907kXjhHO2kgkysA~-Y5fB2XEYitKOmrzzwlGFoQSK15wdXLZtdgs~Erx-18v092XjuSTIlimj9rzKX1XjiFm3oOvi7cwW1c78vBwhzdX7hzbJLeVMMBGYcdA0Eh-gNs4FNA0zy~49flaVJO1qoQ__",
+        "https://s3-alpha-sig.figma.com/img/7b62/cf7e/7e4d08459c623f03c6d58748af98a7a7?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FixLBzXE0n6c967nZL6SIvbIiONIXiupKHOeC5wPAQX9coBN3xv8TXyQ8cd~99hp8vqwJAOvFd-KbYINXpa5fKda2CFZf22Tm0oLo9iyYB7mxj2t~jLpWJzd2SB5FrMJsWLmPTX2avYyfMbqY~bxWVXvcSobBTDz1eh5Ehi3IRWcdjCOl9l3Ge18EMWZ7oWVpEuu5wi~cny1Fkv009tOFfcat8deUBgBpULhBZpbN~9KsU31rTeUSKbAMPvf4e~7o1IkMjYgXXPDR40Wmx2S92OyqYcPPYt0cJVkYnXtqFHK-wCR-BoDo4PDT7ddZBSN~8XGUyyTLOyjtT8E3Np5kg__",
 
       thumbnail:
-        "https://s3-alpha-sig.figma.com/img/7b62/cf7e/7e4d08459c623f03c6d58748af98a7a7?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BnKaBeuC4KxqdsMT-tC8lsoojXS7p7mXA1vogHnVEJUQszYVFPBjL2JmJLloex-Dbq7vpWMgGsVQkMAqkRhdRpnBwMtZKLeI~xsArf~wAJFs2SeTKu-sQD4IaVCjmcfcbUW5o4tSotlb5iW6ay7D3k9WVvMTLBJwFZbkPvz~pF2IGfDoMhsfBAx7gDEO3P2V39907kXjhHO2kgkysA~-Y5fB2XEYitKOmrzzwlGFoQSK15wdXLZtdgs~Erx-18v092XjuSTIlimj9rzKX1XjiFm3oOvi7cwW1c78vBwhzdX7hzbJLeVMMBGYcdA0Eh-gNs4FNA0zy~49flaVJO1qoQ__",
+        "https://s3-alpha-sig.figma.com/img/7b62/cf7e/7e4d08459c623f03c6d58748af98a7a7?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FixLBzXE0n6c967nZL6SIvbIiONIXiupKHOeC5wPAQX9coBN3xv8TXyQ8cd~99hp8vqwJAOvFd-KbYINXpa5fKda2CFZf22Tm0oLo9iyYB7mxj2t~jLpWJzd2SB5FrMJsWLmPTX2avYyfMbqY~bxWVXvcSobBTDz1eh5Ehi3IRWcdjCOl9l3Ge18EMWZ7oWVpEuu5wi~cny1Fkv009tOFfcat8deUBgBpULhBZpbN~9KsU31rTeUSKbAMPvf4e~7o1IkMjYgXXPDR40Wmx2S92OyqYcPPYt0cJVkYnXtqFHK-wCR-BoDo4PDT7ddZBSN~8XGUyyTLOyjtT8E3Np5kg__",
       thumbnailLabel: "Ground",
     },
     {
       original:
-        "https://s3-alpha-sig.figma.com/img/be2f/7c5b/4fec2896ce1cc82697f10d12557f406e?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ebinLC6nsGt2-jOPpEUoIIjXsS-MN2QEFD8VxpHKAxVjhqTqLWVkF-zcM2kB-RvYw~fbSCbZmW3vur59FnkzZWS-O2C-pp~hmiCvkG8VNmQ4M9aISH-kxucJ6x3l-q36-HfV9F3tZYr96XxceFDqLu8lcCfnJ2pPwl0ni-JMlaryJLjUVzDLqx3hLhKW95vgyS3MmJMPfyNKIbNIFS3qwHdDCCGitC06Zb4nCvOMRw6U30lfrZ9T6ystw0aE2zpUk~tgaHAUCxvWmfvfzT~9jQvhWZ7TsQEMwp2ngKkX7OlkCr3ln7eozQfq~ZKHMbqQh2i0HgR-NWgXNDHQxXSq3g__",
+        "https://s3-alpha-sig.figma.com/img/be2f/7c5b/4fec2896ce1cc82697f10d12557f406e?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CLfU42BsKqjINAl86GwV28ojjf73iNIy0q2uJwPBM-nZZ3ZHPYQiTMMY~YQ~aJP0jYvfcljGMbX0oj9~gaO4M00z4BqZbVCPjPh7Pb4S~Bkj4MoNI-5uwGIxS5f5XQxRoE5D10egxDL3eolpUZ60Y8JyLitflOZMYRulfF4r-fPLWZZa9QEa5RjRhl6rOIwH57FwEmBeAZTw~~Yy3BXUmdlfAwmCqBRUZ4BEagyR8-m7XPq27VD7aX5s2etVmwBgaCa-WnwfUQifzExMzIxouvu1G7MnqPqFHDZavfn5QRuvCcv1lIvNH25pGvukbgVqrD-hVE4ecv3X9tEQfi1Tqg__",
 
       thumbnail:
-        "https://s3-alpha-sig.figma.com/img/be2f/7c5b/4fec2896ce1cc82697f10d12557f406e?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ebinLC6nsGt2-jOPpEUoIIjXsS-MN2QEFD8VxpHKAxVjhqTqLWVkF-zcM2kB-RvYw~fbSCbZmW3vur59FnkzZWS-O2C-pp~hmiCvkG8VNmQ4M9aISH-kxucJ6x3l-q36-HfV9F3tZYr96XxceFDqLu8lcCfnJ2pPwl0ni-JMlaryJLjUVzDLqx3hLhKW95vgyS3MmJMPfyNKIbNIFS3qwHdDCCGitC06Zb4nCvOMRw6U30lfrZ9T6ystw0aE2zpUk~tgaHAUCxvWmfvfzT~9jQvhWZ7TsQEMwp2ngKkX7OlkCr3ln7eozQfq~ZKHMbqQh2i0HgR-NWgXNDHQxXSq3g__",
+        "https://s3-alpha-sig.figma.com/img/be2f/7c5b/4fec2896ce1cc82697f10d12557f406e?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CLfU42BsKqjINAl86GwV28ojjf73iNIy0q2uJwPBM-nZZ3ZHPYQiTMMY~YQ~aJP0jYvfcljGMbX0oj9~gaO4M00z4BqZbVCPjPh7Pb4S~Bkj4MoNI-5uwGIxS5f5XQxRoE5D10egxDL3eolpUZ60Y8JyLitflOZMYRulfF4r-fPLWZZa9QEa5RjRhl6rOIwH57FwEmBeAZTw~~Yy3BXUmdlfAwmCqBRUZ4BEagyR8-m7XPq27VD7aX5s2etVmwBgaCa-WnwfUQifzExMzIxouvu1G7MnqPqFHDZavfn5QRuvCcv1lIvNH25pGvukbgVqrD-hVE4ecv3X9tEQfi1Tqg__",
       thumbnailLabel: "Parking",
     },
     {
       original:
-        "https://s3-alpha-sig.figma.com/img/4357/0709/f38fe819364d8273c1ecf3abc8a56c51?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pdD2jBkVf0LHcIVDJztmoUu0Nsvczco7HJuVWJqfdmagKDKSdAcCu9aeoK2Q2pxgqcI3ophBMrJOh2udQ6eYIblWXj82c9FGyDG4WAa3bDSOeyBOnZSh-g-xueqKsM1~YA9P-OvkpK~TbLU3EwRHThCh0RXjpjLHHcDqnzIxjGN~AanzjwnoeyPt5kssRxGHRJDQWPwXgmYR2w68wQJpV2~JH5DGeUYX3-QFC46D1cq1PfmP8uQBzDe0UwpvmundhugQMfzO~jNexOewfmvoMnqvGmzaZMPTDGKLTQSJ-cs60u7JjAW7co13fBWTH37Sh6~Y97B6MGex54f3eeAruw__",
+        "https://s3-alpha-sig.figma.com/img/4357/0709/f38fe819364d8273c1ecf3abc8a56c51?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=l15Pu9zfSJ6nGRMO4KglPtYDReX~ULcJ8hjXKpYNKx5h0sZkiPrQBfOkdcRTMo5ajjWEDtmrHKa68Pvpr~SPwNvLLAmvq4cVyAFUZhtEORQ6CNoeWfX-pUg~S8K7ZjuyqwHcEVaJl4dcpWNF9oLYwmDxx3~ntDIS-wSNqpvYQ-OQ0s-MLZ8LIZGBtLroJBL1qtoynjHUisSmrGEPUdmnXxkXG7yu5llbjEtOc0Axyj6VWczAmwEUjYjQ6xK4BllBy5BLBH8OUxJBeo2p9fhtJa5Vou~QU3XNJqX4WCoAKnx2m2Xb20RYcVNpCjQtyPdIKwpAQ0UJ-ZqFJqF830ThRA__",
 
       thumbnail:
-        "https://s3-alpha-sig.figma.com/img/4357/0709/f38fe819364d8273c1ecf3abc8a56c51?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pdD2jBkVf0LHcIVDJztmoUu0Nsvczco7HJuVWJqfdmagKDKSdAcCu9aeoK2Q2pxgqcI3ophBMrJOh2udQ6eYIblWXj82c9FGyDG4WAa3bDSOeyBOnZSh-g-xueqKsM1~YA9P-OvkpK~TbLU3EwRHThCh0RXjpjLHHcDqnzIxjGN~AanzjwnoeyPt5kssRxGHRJDQWPwXgmYR2w68wQJpV2~JH5DGeUYX3-QFC46D1cq1PfmP8uQBzDe0UwpvmundhugQMfzO~jNexOewfmvoMnqvGmzaZMPTDGKLTQSJ-cs60u7JjAW7co13fBWTH37Sh6~Y97B6MGex54f3eeAruw__",
+        "https://s3-alpha-sig.figma.com/img/4357/0709/f38fe819364d8273c1ecf3abc8a56c51?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=l15Pu9zfSJ6nGRMO4KglPtYDReX~ULcJ8hjXKpYNKx5h0sZkiPrQBfOkdcRTMo5ajjWEDtmrHKa68Pvpr~SPwNvLLAmvq4cVyAFUZhtEORQ6CNoeWfX-pUg~S8K7ZjuyqwHcEVaJl4dcpWNF9oLYwmDxx3~ntDIS-wSNqpvYQ-OQ0s-MLZ8LIZGBtLroJBL1qtoynjHUisSmrGEPUdmnXxkXG7yu5llbjEtOc0Axyj6VWczAmwEUjYjQ6xK4BllBy5BLBH8OUxJBeo2p9fhtJa5Vou~QU3XNJqX4WCoAKnx2m2Xb20RYcVNpCjQtyPdIKwpAQ0UJ-ZqFJqF830ThRA__",
       thumbnailLabel: "Students",
     },
   ];
 
   return (
-    <div className="main-wrapper">
+    <div className="main-wrapper ">
       <img
-        className="kavya-img"
-        src="https://s3-alpha-sig.figma.com/img/f104/4c2a/9eae5894bb2ffcea55ff625e05204aa0?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GdAA-XWWsx9lat0zpp2rjFBFJQb4nCqE0AYZw3WHkgxk6ruR-~aS-4SGJgi333gTeHyINg9eXtwPy-abRRrGt-5CfxezsNVEp9nLXCZREbbBi9rCMeXnfQGk8yfQgtt~j8SCVvYrVDhVX-wv4lxpiWm6UqHmrMR28eQIqHvDywwsnUtonl6VrQFopbodLguNWngFFlZFtWWPYR5cyxc5o0gsEpYuOb-hO8jW0awlL193Sjr3~ym6G6e~W5u8qZzrpsmUsg~wFGkzAftBR2VOl33NhH37wSk03m3UdIqFZML5e8V~PR0uPfQjVCTN7A1texpXDhvFttdOUW5wPCK-Hg__"
+        className="kavya-img skeleton"
+        src="https://s3-alpha-sig.figma.com/img/f104/4c2a/9eae5894bb2ffcea55ff625e05204aa0?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mZ2QFyNCP5jX6cbfGU4Lf9ox0xSzk1knJFbw7GPr0HtziKCim97T5sQzlgqGaxgN6Yh6cbUlkzGd1V4FjNlx0cC-YqZ7Y7zJbWqtzBkmK1LRTlZYfwysUbj374ks8DR5AOkYdXDnqU4qPezhmQDMPDBTz7CRBYNltoS3LU9u~uP7-kgkilqHvwb3xCA8pg8yjwmlKALefEtHcXdrbQVh86ajSyQ203DfYIogpNI8YNA9M8EQQXGywb5oJh23XeLlcT7O2puxXdHZy6CXLgOxIAB3LIp1iL6BIJCaWOO0pb3wvMdfOHyliCH2Lf1Yo15cSVdQN-DFWE1T5rG-p3uOBA__"
         alt=""
       />
+
       <div className={changeNavColor ? "navColor" : "header-section"}>
         {/* <div className={changeNavColor ? "navItem" : "header-item"}> */}
         <div className="header-item">
@@ -114,7 +125,33 @@ const HomePage = () => {
             <div className="course-section">
               {" "}
               <a href="/courses">COURSES</a>
-              <div className="triangle-down"></div>
+              <div className="triangle-down">
+                <ul className="dropdown">
+                  <li className="has-submenu">
+                    <a href="#">BBA</a>
+                  </li>
+                  <li>
+                    <a href="#">IT</a>
+                    <ul class="nested-dropdown">
+                      <li>
+                        <a href="#">Computing</a>
+                      </li>
+                      <li>
+                        <a href="#">Multimedia</a>
+                      </li>
+                      <li>
+                        <a href="#">Networking</a>
+                      </li>
+                      <li>
+                        <a href="#">AI</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">MIT</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </li>
           <li>
@@ -136,33 +173,54 @@ const HomePage = () => {
           </a>
         </div>
 
-        <nav className="mobile-nav">
-          <button
-            class="my-button"
-            id="my-button"
-            className="hamburger-icon"
-            onClick={handleButtonClick}
-          >
-            <i class="fas fa-bars"></i>
-          </button>
-          <ul id="mynav">
-            <li>
-              <a href="#">home.</a>
-            </li>
-            <li>
-              <a href="#">work.</a>
-            </li>
-            <li>
-              <a href="#">about.</a>
-            </li>
-            <li>
-              <a href="#">contact.</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+        {/* <div className={changeNavColor ? "navColor" : "header-section"}> */}
 
-      <div className="hero-text">
+        {/* <div className={hideNav ? "hide-navbar" : ""}> */}
+        <div>
+          <div className="mobile-img">
+            <img
+              src="https://kavyaschool.edu.np/images/Kavya-Ing.svg"
+              alt="kavya"
+            />
+          </div>
+
+          <div className="mobile-hero-text">
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;FOR EVERY <br></br>
+            &nbsp;&nbsp; STUDENT, EVERY <br></br>
+            CLASSROOM. REAL<br></br>
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; RESULTS.
+          </div>
+
+          <nav className="mobile-nav">
+            <button
+              class="my-button"
+              id="my-button"
+              className="hamburger-icon"
+              onClick={handleButtonClick}
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <ul id="mynav">
+              <li>
+                <a href="/courses">COURSES</a>
+              </li>
+              <li>
+                <a href="/programs">PROGRAMS</a>
+              </li>
+              <li>
+                <a href="/aboutus">WHY KAVYA</a>
+              </li>
+              <li>
+                <a href="/aboutus">ADMISSION OPEN</a>
+              </li>
+              <li>
+                <a href="/blog">BLOG</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div className="hero-text skeleton-text">
         SMART SCHOOL <br></br> FOR SMART STUDENT
       </div>
       <div className="second-wrapper">
@@ -279,7 +337,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className="slideshow-section">
-        <div className="slideshow">
+        <div className="slideshow skeleton">
           <ImageGallery
             showBullets={true}
             slideInterval={2500}
@@ -380,7 +438,7 @@ const HomePage = () => {
 
       <div className="slanted">
         <img
-          className="slanted-photo"
+          className="slanted-photo skeleton"
           src="https://s3-alpha-sig.figma.com/img/c48a/8e99/138cf858b887e690786c4a7eb358706e?Expires=1713139200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TfqVbW2eyvmMDPYyqKwoFOIyw1aiRZOFifkpxrhqz0kE7lMAbrgYzwE9hDJQgH1u~siO6n9nZRUT253NKEMLQBG1W2brSGyykyaATswdOmr91XuT4KXzPixHzQmDFDHU2J1SmzJb7zWZAIbBVuVh7bEfrEE3n3zif~0v~jQjKuxo05EWqOd1syFwbx9ggrFpvf1501BSxbPEayi9x0NxFTc9lf4Ng3un0RaJgyUDeUURyQM0~yklxLYJjOSzbyOEgIeizNAYhHZLHfJJJqQLlCoWy1mFE50rcxp7jSoN6W6w9GO9jf51ns-PBHJZ3wxXB8H2aGh5JRpQ8Do6ZudJ9A__"
           alt="slanted photo"
         />
